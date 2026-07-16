@@ -6,9 +6,19 @@ int main(){
     double mydouble = 7.0L/9.0;
     long double mylongdouble = 7.0L/9.0;
 
-    printf("float precision: %.8f\n", myfloat);  // 8 decimals of precision
-    printf("double precision: %.12lf\n", mydouble);
-    __mingw_printf("quad precision: %.16Lf\n", mylongdouble);
+    printf("float precision: %.32f\n", myfloat);  // 8 decimals of precision
+    printf("double precision: %.32lf\n", mydouble);
+    __mingw_printf("quad precision: %.32Lf\n", mylongdouble);
+
+    double R = 2.95;
+    long double pi = 3.1415926535897932384626433832795L;
+    float C_1 = 2*pi*R; 
+    double C_2 = 2*pi*R; 
+    long double C_4 = 2*pi*R;
+
+    printf("C_1 = %.32f\n", C_1);
+    printf("C_2 = %.32lf\n", C_2);
+    __mingw_printf("C_4 = %.32Lf\n", C_4);
 
     int a = 4, b = a * 2; // a = 4 b = 8
     int z = 3 * a + b << 1; // 3 * 4 + 12 << 1 = 40 // a = 4, b = 8, z = 40
